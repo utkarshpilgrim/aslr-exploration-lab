@@ -29,10 +29,4 @@ As an Application Security Engineer, this medium-level lab demonstrates Address 
 - Enable: `sudo sysctl -w kernel.randomize_va_space=2`  
 - Analyze: `./analyze_addresses.sh` (logs randomization)
 
-## Findings  
-[Insert your logs/screenshots here] – With ASLR on, addresses vary (e.g., libc base shifts by ~28 bits), making exploits probabilistic.
-
-## License  
-MIT – Fork and experiment responsibly.
-
 **Connect**: LinkedIn www.linkedin.com/in/utkarshpratap-cs | Built Jan 2026
