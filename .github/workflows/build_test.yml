@@ -1,0 +1,26 @@
+name: Build and Test ASLR Lab
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y build-essential
+
+    - name: Build with PIE
+      run: cd src && make pie
+
+    - name: Build without PIE
+      run: cd src && make nopie
+
+    - name: Run analysis script (sample)
+      run: cd src && ./analyze_addresses.sh 2
